@@ -1,0 +1,14 @@
+---
+- name: global
+  become: true
+  hosts: all
+  vars_files:
+    - users_list.yml
+  tasks:
+    - name: add users from list
+      user:
+        name: "{{ item.name }}"
+        comment: "{{ item.firstname + ' ' + item.middlename + ' ' + item.lastname }}"
+        uid: "{{ item.uid }}"
+        password: "{{ lookup('password','password-' + item.name + ' chars=digits length=6 encrypt=sha512_crypt') }}"
+      loop: "{{ users }}"

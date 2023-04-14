@@ -1,0 +1,12 @@
+users:
+  - name: wkral
+    firstname: Wouter
+    middlename: van
+    lastname: Kral
+    uid: 27485
+    
+  - name: jkral
+    firstname: Jetteke
+    middlename: van
+    lastname: Kral
+    uid: 18585

@@ -1,0 +1,9 @@
+---
+- name: global
+  become: true
+  hosts: all
+  tasks:
+    - name: command1
+      command: echo 'command1'
+    - name: command2
+      command: echo 'command2'
